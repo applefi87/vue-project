@@ -7,12 +7,14 @@ const arr = reactive([
   { picnum: 4, text: '444', good: false },
   { picnum: 5, text: '555', good: false }
 ])
+const props = defineProps({
+  numb: Number
+})
 
-const emit = defineEmits(['numb'])
+const emit = defineEmits(['update:numb'])
 
-watch(arr, (n, o) => {
+watch(arr, (n) => {
   const nums = arr.filter(i => { return i.good }).length
-  console.log(nums)
   emit('update:numb', nums)
 })
 
