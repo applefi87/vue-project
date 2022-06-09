@@ -24,6 +24,7 @@ const emit = defineEmits(['update:numb'])
 watch(arr, () => {
   const nums = arr.filter(i => { return i.good }).length
   emit('update:numb', nums)
+  console.log(props.numb)
 })
 
 </script>
